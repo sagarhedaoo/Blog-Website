@@ -25,44 +25,6 @@ app.use(express.urlencoded({ extended: true }));
 //middlewares
 app.use(morgan("tiny"));
 
-//monoogse and mongo sandbox routes
-// app.get("/add-blog", (req, res) => {
-//   const blog = new Blog({
-//     title: "new blog 2",
-//     snippet: "about my new blog",
-//     body: "more about my new blog",
-//   });
-
-//   blog
-//     .save()
-//     .then((results) => {
-//       res.send(results);
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//     });
-// });
-
-// app.get("/all-blogs", (req, res) => {
-//   Blog.find()
-//     .then((result) => {
-//       res.send(result);
-//     })
-//     .catch((err) => {
-//       res.catch(err);
-//     });
-// });
-
-// app.get("/single-blog", (req, res) => {
-//   Blog.findById("6475f4c169231418ffd01a52")
-//     .then((result) => {
-//       res.send(result);
-//     })
-//     .catch((err) => {
-//       res.catch(err);
-//     });
-// });
-
 app.get("/", (req, res) => {
   res.redirect("/blogs");
 });
