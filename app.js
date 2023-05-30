@@ -1,4 +1,5 @@
 const express = require("express");
+const morgan = require("morgan");
 
 //express app
 const app = express();
@@ -9,8 +10,13 @@ app.set("view engine", "ejs");
 //listen for req
 app.listen(3000);
 
+//static files
+
+//middlewares
+app.use(morgan("tiny"));
+
 app.get("/", (req, res) => {
-  const blogs = [];
+  const blogs = [{ title: "Blog1", snippet: "This is Blog 1" }];
   res.render("index", { title: "Home", blogs });
 });
 
