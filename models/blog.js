@@ -7,7 +7,7 @@ const blogSchema = new Schema(
       type: String,
       required: true,
     },
-    snipper: {
+    snippet: {
       type: String,
       required: true,
     },
@@ -19,6 +19,6 @@ const blogSchema = new Schema(
   { timestamps: true }
 );
 
-const Blog = mongooose.model("Blog", blogSchema);
+const Blog = mongoose.model("Blog", blogSchema);
 
 module.exports = Blog;
