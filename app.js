@@ -1,14 +1,21 @@
 const express = require("express");
 const morgan = require("morgan");
+const mongoose = require("mongoose");
 
 //express app
 const app = express();
 
+//Mongo Connection
+const dbURI =
+  "mongodb+srv://shedaoo:Sagar123@blogposts.xe4nxin.mongodb.net/posts";
+mongoose
+  .connect(dbURI)
+  .then((result) => console.log("Connected to DB"))
+  .then((result) => app.listen(3000))
+  .catch((err) => console.log("Error connecting DB"));
+
 //register view engine
 app.set("view engine", "ejs");
-
-//listen for req
-app.listen(3000);
 
 //static files
 app.use(express.static("public"));
